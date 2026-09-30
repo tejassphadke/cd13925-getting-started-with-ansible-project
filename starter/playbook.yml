@@ -40,7 +40,7 @@
             msg: "ERROR: /var/www/html/www.companyplus.com does not exist"
           when: not companyplus_dir.stat.exists
 
- roles:
+  roles:
     - role: webserver
       vars:
         app_root: html_demo_site-main
