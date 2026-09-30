@@ -3,7 +3,13 @@
   ansible.builtin.package:
     name: "{{ webserver }}"
     state: present
- 
+
+- name: Start and enable nginx
+  ansible.builtin.service:
+    name: "{{ webserver }}"
+    state: started
+    enabled: true
+ 
 - name: Create website directories
   ansible.builtin.file:
     path: "{{ item }}"
