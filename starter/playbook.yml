@@ -13,4 +13,12 @@
         name: firewalld
         state: started
         enabled: true
+
+    - name: Open web ports in firewalld
+      ansible.posix.firewalld:
+        port: "{{ item }}"
+        permanent: true
+        immediate: true
+        state: enabled
+      loop: "{{ ports }}"
  
