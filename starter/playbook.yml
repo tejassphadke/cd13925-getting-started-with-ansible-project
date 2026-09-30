@@ -39,4 +39,10 @@
           debug:
             msg: "ERROR: /var/www/html/www.companyplus.com does not exist"
           when: not companyplus_dir.stat.exists
- 
+
+ roles:
+    - role: webserver
+      vars:
+        app_root: html_demo_site-main
+        server_name: "{{ ansible_default_ipv4.address }}"
+        document_root: /var/www/html
