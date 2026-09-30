@@ -31,12 +31,12 @@
           register: companyplus_dir
  
         - name: Directory exists
-        debug:
-          msg: "/var/www/html/www.companyplus.com exists"
-        when: companyplus_dir.stat.exists
+          debug:
+            msg: "/var/www/html/www.companyplus.com exists"
+          when: companyplus_dir.stat.exists
  
         - name: Directory does not exist
-        debug:
-          msg: "ERROR: /var/www/html/www.companyplus.com does not exist"
-        when: not companyplus_dir.stat.exists
+          debug:
+            msg: "ERROR: /var/www/html/www.companyplus.com does not exist"
+          when: not companyplus_dir.stat.exists
  
